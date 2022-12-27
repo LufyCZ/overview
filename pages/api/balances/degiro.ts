@@ -7,7 +7,7 @@ const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(200).json({ usdValue: await getDegiroBalance(config.DEGIRO) });
   } catch (err: any) {
-    res.status(500).json({ statusCode: 500 });
+    res.status(500).json({ statusCode: 500, error: err });
   }
 };
 

@@ -9,7 +9,7 @@ const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
       .status(200)
       .json({ usdValue: await getBitcoinBalances(config.BITCOIN) });
   } catch (err: any) {
-    res.status(500).json({ statusCode: 500 });
+    res.status(500).json({ statusCode: 500, error: err });
   }
 };
 
