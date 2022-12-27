@@ -1,13 +1,17 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { FC } from "react";
+import Card from "../components/Cards/Card";
+import Portfolio from "../components/Cards/Portfolio/Portfolio";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">About</Link>
-    </p>
-  </Layout>
-)
+const IndexPage: FC = () => {
+  return (
+    <div className="grid grid-cols-5">
+      <div className="col-span-2">
+        <Card title="Portfolio">
+          <Portfolio />
+        </Card>
+      </div>
+    </div>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
