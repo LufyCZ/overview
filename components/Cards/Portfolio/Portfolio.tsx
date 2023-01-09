@@ -1,9 +1,8 @@
 import React from "react";
-import { COLORS } from "../../../config/colors";
-import { Services, useBalance } from "../../../lib";
-import { formatUSD } from "../../../lib/format";
+import { COLORS } from "config/colors";
+import { Services, useBalance, formatUSD } from "lib";
 
-const Portfolio = () => {
+export const Portfolio = () => {
   const values = Object.keys(Services).map(
     (service: keyof typeof Services) => ({
       name: service,
@@ -46,5 +45,3 @@ const Portfolio = () => {
     </>
   );
 };
-
-export default Portfolio;

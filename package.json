@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "binance": "^2.2.3",
+    "classnames": "^2.3.2",
     "crypto": "^1.0.1",
     "next": "latest",
     "numeral": "^2.0.6",

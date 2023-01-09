@@ -1,15 +1,15 @@
 import { FC } from "react";
-import Card from "../components/Cards/Card";
-import Portfolio from "../components/Cards/Portfolio/Portfolio";
+import { Card, Portfolio, Validators } from "components/Cards";
 
 const IndexPage: FC = () => {
   return (
-    <div className="grid md:grid-cols-5">
-      <div className="md:col-span-2">
-        <Card title="Portfolio">
-          <Portfolio />
-        </Card>
-      </div>
+    <div className="grid gap-4 md:grid-cols-5">
+      <Card title="Portfolio" className="md:col-span-2">
+        <Portfolio />
+      </Card>
+      <Card title="Validators" className="md:col-span-3">
+        <Validators />
+      </Card>
     </div>
   );
 };
