@@ -22,7 +22,7 @@ const Layout = ({ children }: Props) => (
       </div>
     </header>
     <div className="flex justify-center">
-      <div className="w-full md:w-2/3">{children}</div>
+      <div className="w-full md:w-4/5 2xl:w-2/3">{children}</div>
     </div>
   </div>
 );
