@@ -1,14 +1,12 @@
 import React from "react";
 import { COLORS } from "config/colors";
-import { Services, useBalance, formatUSD } from "lib";
+import { Service, useBalance, formatUSD } from "lib";
 
 export const Portfolio = () => {
-  const values = Object.keys(Services).map(
-    (service: keyof typeof Services) => ({
-      name: service,
-      amount: useBalance(service),
-    })
-  );
+  const values = Object.keys(Service).map((service: Service) => ({
+    name: service,
+    amount: useBalance(service),
+  }));
 
   const total = values.reduce((acc, cur) => (acc += cur?.amount ?? 0), 0);
 
