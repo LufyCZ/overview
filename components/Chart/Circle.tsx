@@ -13,7 +13,10 @@ class LabelComponent extends React.Component {
   render() {
     return (
       <g>
-        <VictoryLabel {...(this.props as any)} />
+        <VictoryLabel
+          {...(this.props as any)}
+          text={({ datum }) => `${datum.value}%`}
+        />
         <VictoryTooltip
           {...this.props}
           x={200}
@@ -58,6 +61,7 @@ export const Circle: FC<Circle> = ({ data }) => {
           fill: (d) => d.datum.color,
         },
       }}
+      animate={{ duration: 20 }}
       labelComponent={<LabelComponent />}
       innerRadius={110}
       radius={135}
