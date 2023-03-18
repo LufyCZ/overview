@@ -1,9 +1,9 @@
 export async function getDebankBalance(address?: string) {
-  const { data }: { data: { user: { usd_value: number } } } = await fetch(
-    `https://api.debank.com/hi/user/info?id=${address}`
+  const { data }: any = await fetch(
+    `https://api.debank.com/user?id=${address}`
   ).then((data) => data.json());
 
-  return data.user.usd_value;
+  return data.user.desc.usd_value;
 }
 
 export async function getDebankBalances(addresses?: string[]) {
