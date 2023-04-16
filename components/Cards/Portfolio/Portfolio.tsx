@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { COLORS } from "config/colors";
 import { Service, useBalance, formatUSD } from "lib";
 import { Circle } from "components/Chart";
+import { CurrencyAmount } from "components";
 
 export const Portfolio = () => {
   const balances = Object.keys(Service).map((service: Service) => ({
@@ -39,7 +40,9 @@ export const Portfolio = () => {
           <div className="space-y-2">
             {values.map((value, i) => (
               <div key={i} className="flex justify-end">
-                <div>{formatUSD(value.amount)}</div>
+                <div>
+                  <CurrencyAmount amount={value.amount} />
+                </div>
               </div>
             ))}
           </div>
@@ -49,7 +52,9 @@ export const Portfolio = () => {
         <div className="grid w-full grid-flow-col grid-cols-2">
           <div>Total</div>
           <div>
-            <div className="flex justify-end">{formatUSD(total)}</div>
+            <div className="flex justify-end">
+              <CurrencyAmount amount={total} />
+            </div>
           </div>
         </div>
       </div>
